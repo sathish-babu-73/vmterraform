@@ -1,17 +1,17 @@
 pipeline {
     agent any
     environment {
-        TF_VAR_credentials = credentials('112')
+        TF_VAR_credentials = credentials('100')
     }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Vairavmoorthy/vmterraform.git'
+                git 'https://github.com/sathish-babu-73/vmterraform.git'
             }
         }
         stage('Build Infrastructure') {
             steps {
-                withAWS(credentials: '112') {
+                withAWS(credentials: '100') {
                    // sh 'terraform init'
                     sh 'terraform apply -auto-approve'
                 }
