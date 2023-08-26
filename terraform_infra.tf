@@ -45,7 +45,7 @@ resource "aws_security_group" "public_sec" {
 resource "aws_instance" "ubuntu20-a" {
   ami = "ami-08e5424edfe926b43"
   instance_type = "t2.micro"
-  key_name = "vm"
+  key_name = "Mum-Aug22-2023-Linux"
   user_data = file("ansible.sh")
  subnet_id = aws_subnet.public.id
  vpc_security_group_ids = [aws_security_group.public_sec.id]
